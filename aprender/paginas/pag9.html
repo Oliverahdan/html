@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<p class="pag9">Clique no número 9 abaixo para continuar. Tenha cuidado para não clicar nos 3 ao redor, ou você será enviado de volta à página 3!</p>
+<p class="pag9">(Dica: quando o cursor do mouse mudar para o formato de uma mão, coloque a ponta do dedo no meio do link no qual deseja clicar)</p>
+<p class="pag9">
+<a class="pag9" href="/paginas/pag3.html">3<a class="pag9" href="/paginas/pag3.html">3</a><a class="pag9" href="/paginas/pag3.html">3</a></a><br>
+<a class="pag9" href="/paginas/pag3.html">3<a class="pag9" href="/paginas/pag10.html">9</a><a class="pag9" href="/paginas/pag3.html">3</a></a><br>
+<a class="pag9" href="/paginas/pag3.html">3<a class="pag9" href="/paginas/pag3.html">3</a><a class="pag9" href="/paginas/pag3.html">3</a></a>
+</p>
+<script>
+
+    let contador = 0;
+    const html = document.querySelector("html");
+    html.addEventListener("click", contarclick);
+    function contarclick() {
+    contador++;
+    localStorage.setItem("contadorpg9", contador);
+    }
+    </script>
+</body>
+</html>

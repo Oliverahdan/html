@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+ <header>
+    <h1 class="cabeçalho">Mouse<img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></h1>
+</header>
+<p>Escolha o que quer usar!</p>
+<div class="lego">
+    <form>
+        <input class="checkbox" type="checkbox" onclick="click1()" >
+        <label>cabelo</label><br>
+        <input class="checkbox1" type="checkbox" onclick="click2()" >
+        <label>espada</label><br>
+        <input class="checkbox2" type="checkbox" onclick="click3()" >
+        <label>escudo</label><br>
+        <input class="checkbox3" type="checkbox" onclick="click4()" >
+        <label>nuvem</label><br>
+       <button class="pag30" type="button" onclick="mudar()">continue</button>
+    </form>
+
+    <img class="lego" src="/img/lego.png" alt="lego">
+    <img class="lego_cabelo" src="/img/cabelo.png" alt="cabelo">
+    <img class="lego_scalibur" src="/img/scalibur.png" alt="scalibur">
+    <img class="lego_escudo" src="/img/capitao.png" alt="capitao">
+    <img class="lego_nuvem" src="/img/nuvem.png" alt="nuvem">
+</div>
+<script>
+function mudar() {    // Redireciona para a página desejada quando o botão "continue" é clicado
+    window.location.href = '/paginas/pag31.html';
+}
+
+function click1() {
+    var checkbox = document.querySelector('.checkbox');
+    var imagemCabelo = document.querySelector('.lego_cabelo');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+        
+    } else {
+        imagemCabelo.style.display = 'none';
+    }
+}
+
+function click2() {
+    var checkbox = document.querySelector('.checkbox1');
+    var imagemCabelo = document.querySelector('.lego_scalibur');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+    } else {
+        imagemCabelo.style.display = 'none';
+    }
+}
+
+function click3() {
+    var checkbox = document.querySelector('.checkbox2');
+    var imagemCabelo = document.querySelector('.lego_escudo');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+    } else {
+        imagemCabelo.style.display = 'none';
+    }
+}
+
+function click4() {
+    var checkbox = document.querySelector('.checkbox3');
+    var imagemCabelo = document.querySelector('.lego_nuvem');
+    var botao = document.querySelector('.pag30');
+
+    if (checkbox.checked) {
+        imagemCabelo.style.display = 'block';
+        botao.style.display = 'block';
+    } else {
+        imagemCabelo.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>
+
+
+div.lego{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+}
+
+img.lego{
+    grid-column: 3;
+    grid-row: 1;
+    width: 200px;
+    margin-top: 18px;
+}
+
+.lego_cabelo{
+    width: 100px;
+    grid-column: 3;
+    grid-row: 1;
+    margin-left: 45px;
+    display: none;
+}
+.lego_scalibur{
+    width: 100px;
+    grid-column: 3;
+    margin-top: -40px;
+    margin-left: -30px;
+    display: none;
+}
+
+.lego_escudo{
+    width: 100px;
+    grid-column: 4;
+    margin-top: -20px;
+    grid-row: 2;
+    display: none;
+
+}
+
+.lego_nuvem{
+    width: 200px;
+    grid-column: 3;
+    grid-row: 3;
+    margin-top: -60px;
+    margin-left: 30px;
+    display: none;
+
+}

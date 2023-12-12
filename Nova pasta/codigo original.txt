@@ -1,0 +1,177 @@
+primeiro passo: criar uma conta no Openwheater para busca informações sobre metereologia
+segundo passo: criar uma api key
+terceiro passo: buscar o link de busca de cidade e temperatura e afins
+
+criar o codigo:
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:weather_icons/weather_icons.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class WeatherData {
+  final String cityName;
+  final double temperature;
+  final String description;      ////// Essa classe representa os dados do clima, contendo o nome da cidade, temperatura, descrição do clima e o código do ícone correspondente.
+  final String iconCode; 
+
+  WeatherData({
+    required this.cityName,
+    required this.temperature,
+    required this.description,
+    required this.iconCode,
+  });
+
+  factory WeatherData.fromJson(Map<String, dynamic> json) {
+    return WeatherData(
+      cityName: json['name'],
+      temperature: json['main']['temp'].toDouble() - 273.15,
+      description: json['weather'][0]['description'],
+      iconCode: json['weather'][0]['icon'],
+    );
+  }
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {       ////// Esta classe é um widget principal que define o título da aplicação e define WeatherScreen como a tela inicial da aplicação.
+    return MaterialApp(
+      title: 'Meteorologia',
+      home: WeatherScreen(),
+    );
+  }
+}
+
+class WeatherScreen extends StatefulWidget {
+  @override
+  _WeatherScreenState createState() => _WeatherScreenState();   
+class _WeatherScreenState extends State<WeatherScreen> {            ///Classe WeatherScreen: Aqui começa a construção da interface do aplicativo. A classe WeatherScreen é um StatefulWidget que controla a exibição dos dados do clima e da interface do usuário.
+  WeatherData? weatherData;
+  List<String> citiesInMinasGerais = [
+    'Belo Horizonte', 'Uberlândia', 'Contagem', 'Juiz de Fora', 'Betim', 'Divinópolis', 'Carmo do Cajuru',
+  ];
+  String selectedCity = 'Belo Horizonte'; ////// Aqui você define variáveis como weatherData para armazenar os dados do clima, citiesInMinasGerais para a lista de cidades em Minas Gerais e outras variáveis para as traduções, mapeamento de ícones e mapeamento de cores.
+
+  Map<String, String> descriptionTranslations = {  
+    'clear sky': 'Céu limpo',
+    'few clouds': 'Poucas nuvens',
+    'scattered clouds': 'Nuvens dispersas',
+    'broken clouds': 'Nuvens quebradas',
+    'shower rain': 'Chuva isolada',
+    'rain': 'Chuva',
+    'thunderstorm': 'Tempestade',          
+    'snow': 'Neve',
+    'mist': 'Nevoeiro',
+  };
+
+  Map<String, IconData> weatherIconMap = {
+    "01d": WeatherIcons.day_sunny,
+    "02d": WeatherIcons.day_cloudy,
+    "03d": WeatherIcons.cloud,
+    "04d": WeatherIcons.cloudy,
+    "09d": WeatherIcons.showers,
+    "10d": WeatherIcons.rain,
+    "11d": WeatherIcons.thunderstorm,
+    "13d": WeatherIcons.snow,
+    "50d": WeatherIcons.fog,
+    // Mapeamentos semelhantes para ícones noturnos (adicione "n" ao código)
+  };
+
+  Map<String, Color> weatherColorMap = {
+    "01d": Color.fromARGB(255, 255, 181, 71),    // Ensolarado
+    "02d": Color.fromARGB(255, 190, 229, 248),  // Poucas nuvens
+    "03d": Color.fromARGB(255, 137, 208, 240), // Nuvens dispersas
+    "04d": Color.fromARGB(255, 174, 174, 174),      // Nuvens quebradas
+    "09d": const Color.fromARGB(255, 212, 212, 212),      // Chuviscando
+    "10d": Color.fromARGB(255, 95, 95, 95),      // Chuva
+    "11d": const Color.fromARGB(255, 81, 81, 81),      // Tempestade
+    "13d": const Color.fromARGB(255, 255, 255, 255),      // Neve
+    "50d": Color.fromARGB(255, 255, 255, 202),      // Nevoa
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    fetchWeatherData(selectedCity);   ////// O método initState é chamado quando o widget é criado pela primeira vez. Ele inicia a busca pelos dados do clima para a cidade selecionada.
+  }
+
+  Future<void> fetchWeatherData(String cityName) async {
+    final response = await http.get(
+        Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=808e2a076233f96cafbb5a45abac9f83'));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      setState(() {
+        weatherData = WeatherData.fromJson(data);          //////// Este método faz uma requisição à API do OpenWeatherMap para obter os dados do clima com base na cidade selecionada. Ele atualiza o estado do widget com os novos dados.
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {                              /// Este método é responsável por construir a interface do aplicativo. Aqui, você define a aparência do aplicativo, incluindo a barra de título, o fundo colorido com base no clima atual, o menu suspenso para selecionar a cidade e a exibição dos dados do clima.
+    Color? backgroundColor = Colors.white; // Default background color
+
+    if (weatherData != null) {
+      backgroundColor = weatherColorMap[weatherData!.iconCode] ?? Colors.white; //// A cor de fundo do aplicativo é atualizada de acordo com o ícone de clima usando o mapeamento de cores weatherColorMap.
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Meterologia'),
+      ),
+      backgroundColor: backgroundColor,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DropdownButton<String>(             ////// Um menu suspenso é exibido com a lista de cidades em Minas Gerais. Quando o usuário seleciona uma cidade, o método fetchWeatherData é chamado para obter os dados de clima para essa cidade.
+              value: selectedCity,
+              onChanged: (newValue) {
+                setState(() {
+                  selectedCity = newValue!;
+                  fetchWeatherData(selectedCity);
+                });
+              },
+              items: citiesInMinasGerais
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            SizedBox(height: 16),
+            weatherData != null
+                ? Column(
+                    children: [
+                      Text(
+                        weatherData!.cityName,
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      SizedBox(height: 16),
+                      Icon(
+                        weatherIconMap[weatherData!.iconCode] ?? WeatherIcons.na,   ///// Os dados do clima são exibidos na forma de ícone, temperatura e descrição. O ícone é selecionado com base no código de ícone retornado pela API e é exibido usando o pacote weather_icons.
+                        size: 48,
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        '${weatherData!.temperature.toStringAsFixed(1)}°C',
+                        style: TextStyle(fontSize: 48),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        descriptionTranslations[weatherData!.description] ?? 'Descrição não disponível',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ],
+                  )
+                : CircularProgressIndicator(),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+    <p>Selecione cada um dos 6 membros do "Seven" de The Boys</p>
+    <form>
+        <input type="radio" name="falsos" onclick="contar(1)" value="Capitão">
+        <label >Capitão Patria</label><br>
+        <input type="radio" name="falsos" onclick="contar(2)" value="Maeve">
+        <label >Maeve</label><br>
+        <input type="radio" name="falsos" onclick="contar(3)" value="Noir">
+        <label >Noir</label><br>
+        <input type="radio" name="falsos" onclick="contar(4)" value="Profundo">
+        <label >Profundo</label><br>
+        <input type="radio" name="falsos" onclick="contar(5)" value="Luz">
+        <label >Luz Estrela</label><br>
+        <input type="radio" name="falsos" onclick="contar(6)" value="Atrain">
+        <label>Atrain</label>
+    </form>
+    <br><br>
+    <button class="pag31" style="display: none;" onclick="mudar()">continue</button>
+    <script>
+
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg30", contador);
+}
+
+
+        var totalBotoes = 6;
+        var botoesClicados = 0;
+        var radiosSelecionados = {};
+
+        function verificarBotoesClicados() {
+            if (botoesClicados === totalBotoes) {
+                document.getElementsByClassName('pag31')[0].style.display = 'block';
+            }
+        }
+
+        function contar(radioId) {
+            if (!radiosSelecionados[radioId]) {
+                radiosSelecionados[radioId] = true; // Marque o rádio selecionado
+                botoesClicados++;
+                verificarBotoesClicados();
+            }
+        }
+
+        function mudar(){
+            window.location.href = '/paginas/pag31.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<p class="pag9"><strong>Dois-cliques</strong> cada um dos Satoru Gojo abaixo para desmantela-los e continue para a próxima página.
+</p>
+
+<div class="imagens">
+<img class="s1" src="/img/satoruinteiro.png" ondblclick="trocar1()"></button>
+<img class="s2" src="/img/satoruinteiro.png" ondblclick="trocar2()"></button>
+<img class="s3" src="/img/satoruinteiro.png" ondblclick="trocar3()"></button>
+<img class="s4" src="/img/satoruinteiro.png" ondblclick="trocar4()"></button>
+<img class="s5" src="/img/satoruinteiro.png" ondblclick="trocar5()"></button>
+<img class="s6" src="/img/satoruinteiro.png" ondblclick="trocar6();"></button>
+
+
+<img class="g1" src="/img/satorumetade.png" alt="verify">
+<img class="g2" src="/img/satorumetade.png" alt="verify">
+<img class="g3" src="/img/satorumetade.png" alt="verify">
+<img class="g4" src="/img/satorumetade.png" alt="verify">
+<img class="g5" src="/img/satorumetade.png" alt="verify">
+<img class="g6" src="/img/satorumetade.png" alt="verify">
+
+
+<br><br><br>
+<a class="continue3" href="/paginas/pag22.html"><button id="continue2" onclick="desmantelar">Continue</button></a>
+</div>
+<script>
+
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg21", contador);
+}
+
+var totalBotoes = 6;
+var botoesClicados = 0;
+
+function verificarBotoesClicados() {
+    if (botoesClicados === totalBotoes) {
+        document.getElementsById('continue2')[0].style.display = 'block';
+    }
+}
+
+
+function trocar1(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.g1');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+
+    var imagen = document.querySelectorAll('img.s1');
+    imagen.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+    setTimeout(function() {
+        var image = document.querySelectorAll('img.g1');
+        image.forEach(function(imagem) {
+            imagem.style.display = 'none';
+        });
+        botoesClicados++;
+    
+        verificarBotoesClicados();
+    }, 1000); // Tempo em milissegundos (2 segundos neste caso)
+}
+function trocar2(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.g2');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    var imagen = document.querySelectorAll('img.s2');
+    imagen.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+    setTimeout(function() {
+        var image = document.querySelectorAll('img.g2');
+        image.forEach(function(imagem) {
+            imagem.style.display = 'none';
+        });
+        botoesClicados++;
+    
+        verificarBotoesClicados();
+    }, 1000); // Tempo em milissegundos (2 segundos neste caso)
+}
+function trocar3(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.g3');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+
+    var imagen = document.querySelectorAll('img.s3');
+    imagen.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+    setTimeout(function() {
+        var image = document.querySelectorAll('img.g3');
+        image.forEach(function(imagem) {
+            imagem.style.display = 'none';
+        });
+        botoesClicados++;
+    
+        verificarBotoesClicados();
+    }, 1000); // Tempo em milissegundos (2 segundos neste caso)
+}
+    
+function trocar4(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.g4');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    
+    var imagen = document.querySelectorAll('img.s4');
+    imagen.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+    setTimeout(function() {
+        var image = document.querySelectorAll('img.g4');
+        image.forEach(function(imagem) {
+            imagem.style.display = 'none';
+        });
+        botoesClicados++;
+    
+        verificarBotoesClicados();
+    }, 1000); // Tempo em milissegundos (2 segundos neste caso)
+}
+function trocar5(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.g5');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    
+    var imagen = document.querySelectorAll('img.s5');
+    imagen.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+    setTimeout(function() {
+        var image = document.querySelectorAll('img.g5');
+        image.forEach(function(imagem) {
+            imagem.style.display = 'none';
+        });
+        botoesClicados++;
+    
+        verificarBotoesClicados();
+    }, 1000); // Tempo em milissegundos (2 segundos neste caso)
+}
+function trocar6(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.g6');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    
+    var imagen = document.querySelectorAll('img.s6');
+    imagen.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+    setTimeout(function() {
+        var image = document.querySelectorAll('img.g6');
+        image.forEach(function(imagem) {
+            imagem.style.display = 'none';
+        });
+        botoesClicados++;
+    
+        verificarBotoesClicados();
+    }, 1000); // Tempo em milissegundos (2 segundos neste caso)
+}
+</script>
+</body>
+</html>

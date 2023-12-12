@@ -1,0 +1,147 @@
+import mysql.connector
+
+def cadastrar_usuario():
+    db_host = 'localhost'
+    db_user = 'root'
+    db_password = 'acesso123'
+    db_name = 'bd'
+
+    conn = mysql.connector.connect(
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_name
+    )
+
+    if conn.is_connected():
+        print("Conexão com o banco de dados estabelecida.")
+
+        cursor = conn.cursor()
+
+        usuario = input("Digite o nome de usuário: ")
+        senha = input("Digite a senha (mínimo 6 caracteres): ")
+
+        sql = "INSERT INTO users (username, passwd) VALUES (%s, %s)"
+        values = (usuario, senha)
+        cursor.execute(sql, values)
+
+        # Recupera o ID do usuário inserido
+        usuario_id = cursor.lastrowid
+
+        # Insere o ID do usuário na tabela_fato
+        sql_insert_fato = "INSERT INTO tabela_fato (id_user) VALUES (%s)"
+        values_fato = (usuario_id,)
+        cursor.execute(sql_insert_fato, values_fato)
+
+        conn.commit()
+
+        print("Usuário cadastrado com sucesso!")
+
+        cursor.close()
+        conn.close()
+    else:
+        print("Não foi possível conectar ao banco de dados.")
+
+def realizar_login():
+    db_host = 'localhost'
+    db_user = 'root'
+    db_password = 'acesso123'
+    db_name = 'bd'
+
+    conn = mysql.connector.connect(
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_name
+    )
+
+    if conn.is_connected():
+        print("Conexão com o banco de dados estabelecida.")
+
+        cursor = conn.cursor()
+
+        usuario = input("Digite o nome de usuário: ")
+        senha = input("Digite a senha: ")
+
+        sql = "SELECT * FROM users WHERE username = %s AND passwd = %s"
+        values = (usuario, senha)
+        cursor.execute(sql, values)
+
+        resultado = cursor.fetchone()
+
+        if resultado:
+            print("Login bem-sucedido!")
+
+            # Solicitar informações para cálculo
+            peso_atual = float(input("Digite o peso atual: "))
+            sexo = input("Digite o sexo (Feminino/Masculino): ")
+            idade = int(input("Digite a idade: "))
+            altura = float(input("Digite a altura em centímetros: "))
+            exercicio_fisico = input("Pratica exercício físico regularmente? (Sim/Não): ")
+
+            # Calcular a ingestão calórica e o IMC
+            ingestao_calorica = calcular_ingestao_calorica(peso_atual, sexo, idade, altura, exercicio_fisico)
+            imc = calcular_imc(peso_atual, altura)
+
+            # Inserir os dados na tabela_fato
+            cursor.execute("INSERT INTO tabela_fato (id_user, peso_atual, sexo, idade, altura, ingestao_calorica, IMC, exercicio_fisico) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                           (resultado[0], peso_atual, sexo, idade, altura, ingestao_calorica, imc, exercicio_fisico))
+
+            print("Dados inseridos na tabela_fato.")
+
+            conn.commit()
+        else:
+            print("Usuário ou senha incorretos.")
+
+        cursor.close()
+        conn.close()
+    else:
+        print("Não foi possível conectar ao banco de dados.")
+
+def calcular_ingestao_calorica(peso, sexo, idade, altura, exercicio_fisico):
+    peso = float(peso)
+    if sexo == "Feminino":
+        if idade <= 3:
+            geb = int((58.317 * peso) - 31.1)
+        elif idade <= 10:
+            geb = int((20.315 * peso) + 485.9)
+        elif idade <= 18:
+            geb = int((13.384 * peso) + 692.6)
+        elif idade <= 30:
+            geb = int((14.818 * peso) + 486.6)
+        elif idade <= 60:
+            geb = int((8.126 * peso) + 845.6)
+        else:
+            geb = int((9.082 * peso) + 658.5)
+    else:
+        if idade <= 3:
+            geb = int((59.512 * peso) - 30.4)
+        elif idade <= 10:
+            geb = int((22.706 * peso) + 504.3)
+        elif idade <= 18:
+            geb = int((17.686 * peso) + 658.2)
+        elif idade <= 30:
+            geb = int((15.057 * peso) + 692.2)
+        elif idade <= 60:
+            geb = int((11.472 * peso) + 873.1)
+        else:
+            geb = int((11.711 * peso) + 587.7)
+
+    if exercicio_fisico.lower() == "sim":
+        geb *= 1.2  # Aumenta a ingestão calórica para quem pratica exercícios
+
+    ingestao_calorica = int(geb)
+    return ingestao_calorica
+
+def calcular_imc(peso, altura):
+    peso = float(peso)  # Converter para float
+    altura_metros = float(altura) / 100  # Converter altura para metros
+    imc = peso / (altura_metros ** 2)
+    return imc
+
+# Executar o cadastro de usuário
+cadastrar_usuario()
+
+# Executar o login e inserção dos dados
+realizar_login()
+

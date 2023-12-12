@@ -1,0 +1,19 @@
+<section> <!-- topico desenvolvimento 1-->
+
+    <h2>TelepatiX CAA e LetMe Talk</h2>
+    <p>Ele oferece comunicação assistiva através de símbolos intuitivos e também incorpora tecnologia de comunicação telepática, permitindo que pessoas com dificuldades motoras se comuniquem por meio do pensamento. Uma solução inclusiva e revolucionária para diversas necessidades especiais.</p>
+
+    <img src=": https://tix.life/produtos/telepatix/" />
+    <h4>Mais informações:</h4>
+    <p>
+      Saiba mais sobre no
+      <a
+        href="https://tix.life/produtos/telepatix/"
+        >site.</a
+      >
+    </p>
+
+<p> <strong>Acesse para saber mais em: </strong>
+  </p>
+  <button><a   target="_blank" href="https://play.google.com/store/apps/details?id=life.tix.telepatix"> App </a></button>
+</section> <!-- fim do topico desenvolvimento 1 -->

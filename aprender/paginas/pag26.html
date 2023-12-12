@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body style="width: 1500px;">
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<p>Esta página tem o dobro da ação da barra de rolagem em uma só! Role até o <strong style="color: red;">fundo</strong> da página, depois para o <strong style="color: red">direita</strong>, para encontrar o link para a próxima página.</p>
+<br><br><br>
+<div class="jornal">
+ <p>
+    Episódios: 62 a 135 <br><br>
+
+    Esta saga tem início com a tripulação do Chapéu de Palha embarcando numa aventura rumo às perigosas corredeiras da Reverse Mountain. O objetivo é entrar na Grand Line, a corrente oceânica conhecida por ser a região mais perigosa do oceano em todo mundo, motivo pelo qual ganhou o apelido de "cemitério de piratas".
+    
+    A partir do segundo arco desta saga, Luffy já está em posse do Log Pose, o dispositivo de navegação fundamental para viajar pela Grand Line. Eles acabam indo parar em Whisky Peak, a primeira ilha que os Chapéus de Palha encontram na rota. O local é conhecido por acolher os piratas de forma calorosa, mas a tripulação de Luffy logo descobre que há muitos segredos por trás dessa pretensa recepção.
+    
+    A segunda ilha visitada pelos piratas de Luffy é a Little Garden, uma ilha de verão habitada plantas e animais pré-históricos e dois gigantes, Dorry e Brogy. Marcado pea perseguição do temido Baroque Works aos gigantes e pela guerra que os próprios gigantes parecem destinados a travar, este arco é conhecido por suas cenas de violência.
+    
+    Nami acaba pegando uma febre mortal em Little Garden, o que faz com que a tripulação de Luffy parta para a ilha seguinte, Drum Island. Lá eles procuram um médico para a pirata. Depois de enfrentar ataques de outros piratas e diferentes criaturas, eles acabam conhecendo Tony Tony Chopper, que entra para o grupo e se torna o médico da tripulação.
+ </p>
+    </div>
+<div class="proximo">
+ <a class="proximo" href="/paginas/pag27.html">next</a>
+</div>
+<script>
+
+    let contador = 0;
+    const html = document.querySelector("html");
+    html.addEventListener("click", contarclick);
+    function contarclick() {
+    contador++;
+    localStorage.setItem("contadorpg26", contador);
+    }
+    </script>
+</body>
+</html>

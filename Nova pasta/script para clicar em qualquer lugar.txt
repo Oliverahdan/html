@@ -1,0 +1,17 @@
+<script>
+        // Inicializa o contador se ele não existir no localStorage
+        if (!localStorage.getItem("contador")) {
+            localStorage.setItem("contador", "0");
+        }
+
+        // Adicione um evento de clique em qualquer elemento da página
+        const elementosDaPagina = document.querySelectorAll('*'); // Seleciona todos os elementos da página
+        elementosDaPagina.forEach(function(elemento) {
+            elemento.addEventListener('click', function() {
+                let contador = parseInt(localStorage.getItem("contador"));
+                contador += 1;
+                localStorage.setItem("contador", contador.toString());
+            });
+        });
+</script>
+

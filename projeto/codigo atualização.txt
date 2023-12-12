@@ -1,0 +1,261 @@
+import tkinter as tk
+from tkinter import messagebox
+import mysql.connector
+
+
+def adicionar_cliente():
+    nome = entry_nome.get()
+    usuario = entry_usuario.get()
+    senha = entry_senha.get()
+    objetivo = entry_objetivo.get()
+    peso_atual = float(entry_peso_atual.get())
+    peso_desejado = float(entry_peso_desejado.get())
+    sexo = entry_sexo.get()
+    idade = int(entry_idade.get())
+    altura = float(entry_altura.get())
+    tipo_emprego = entry_tipo_emprego.get()
+    exercicio_semanal = entry_exercicio_semanal.get()
+    tempo_resultados = int(entry_tempo_resultados.get())
+    ingestao_calorica = int(entry_ingestao_calorica.get())
+    tempo_para_resultados = entry_tempo_para_resultados.get()
+
+    # Conectar ao banco de dados MySQL
+    conexao = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='acesso123',
+        database='atualizar'
+    )
+
+    # Criar um cursor para executar comandos SQL
+    cursor = conexao.cursor()
+
+    # Verificar se o cliente já existe
+    sql_verificar = "SELECT id FROM clientes WHERE usuario = %s"
+    valores_verificar = (usuario,)
+    cursor.execute(sql_verificar, valores_verificar)
+    resultado = cursor.fetchone()
+
+    if resultado:
+        messagebox.showinfo('Erro', 'Cliente já existe no banco de dados. Use o botão "Atualizar Cliente" em vez de "Adicionar Cliente".')
+    else:
+        # Inserir um novo cliente
+        sql_inserir = "INSERT INTO clientes (nome, usuario, senha, objetivo, peso_atual, peso_desejado, sexo, idade, altura, tipo_emprego, exercicio_semanal, tempo_resultados, ingestao_calorica, tempo_para_resultados) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        valores_inserir = (nome, usuario, senha, objetivo, peso_atual, peso_desejado, sexo, idade, altura, tipo_emprego, exercicio_semanal, tempo_resultados, ingestao_calorica, tempo_para_resultados)
+        cursor.execute(sql_inserir, valores_inserir)
+
+        # Confirmar a operação no banco de dados
+        conexao.commit()
+
+        messagebox.showinfo('Sucesso', 'Cliente adicionado com sucesso!')
+
+    # Fechar a conexão com o banco de dados
+    cursor.close()
+    conexao.close()
+
+    limpar_campos()
+
+
+def atualizar_cliente():
+    # Obter os valores dos campos de entrada
+    nome = entry_nome.get().strip()
+    usuario = entry_usuario.get().strip()
+    senha = entry_senha.get().strip()
+    objetivo = entry_objetivo.get().strip()
+    peso_atual = entry_peso_atual.get().strip()
+    peso_desejado = entry_peso_desejado.get().strip()
+    sexo = entry_sexo.get().strip()
+    idade = entry_idade.get().strip()
+    altura = entry_altura.get().strip()
+    tipo_emprego = entry_tipo_emprego.get().strip()
+    exercicio_semanal = entry_exercicio_semanal.get().strip()
+    tempo_resultados = entry_tempo_resultados.get().strip()
+    ingestao_calorica = entry_ingestao_calorica.get().strip()
+    tempo_para_resultados = entry_tempo_para_resultados.get().strip()
+
+    # Verificar se o cliente já existe
+    conexao = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='acesso123',
+        database='atualizar'
+    )
+    cursor = conexao.cursor()
+    sql_verificar = "SELECT id FROM clientes WHERE usuario = %s"
+    valores_verificar = (usuario,)
+    cursor.execute(sql_verificar, valores_verificar)
+    resultado = cursor.fetchone()
+
+    if resultado:
+        # Atualizar os dados do cliente
+        sql_atualizar = "UPDATE clientes SET "
+        valores_atualizar = []
+
+        if nome:
+            sql_atualizar += "nome = %s, "
+            valores_atualizar.append(nome)
+        if senha:
+            sql_atualizar += "senha = %s, "
+            valores_atualizar.append(senha)
+        if objetivo:
+            sql_atualizar += "objetivo = %s, "
+            valores_atualizar.append(objetivo)
+        if peso_atual:
+            sql_atualizar += "peso_atual = %s, "
+            valores_atualizar.append(peso_atual)
+        if peso_desejado:
+            sql_atualizar += "peso_desejado = %s, "
+            valores_atualizar.append(peso_desejado)
+        if sexo:
+            sql_atualizar += "sexo = %s, "
+            valores_atualizar.append(sexo)
+        if idade:
+            sql_atualizar += "idade = %s, "
+            valores_atualizar.append(idade)
+        if altura:
+            sql_atualizar += "altura = %s, "
+            valores_atualizar.append(altura)
+        if tipo_emprego:
+            sql_atualizar += "tipo_emprego = %s, "
+            valores_atualizar.append(tipo_emprego)
+        if exercicio_semanal:
+            sql_atualizar += "exercicio_semanal = %s, "
+            valores_atualizar.append(exercicio_semanal)
+        if tempo_resultados:
+            sql_atualizar += "tempo_resultados = %s, "
+            valores_atualizar.append(tempo_resultados)
+        if ingestao_calorica:
+            sql_atualizar += "ingestao_calorica = %s, "
+            valores_atualizar.append(ingestao_calorica)
+        if tempo_para_resultados:
+            sql_atualizar += "tempo_para_resultados = %s, "
+            valores_atualizar.append(tempo_para_resultados)
+
+        # Remover a vírgula extra no final da instrução SQL
+        sql_atualizar = sql_atualizar.rstrip(", ")
+
+        # Adicionar a cláusula WHERE para especificar o cliente a ser atualizado
+        sql_atualizar += " WHERE usuario = %s"
+        valores_atualizar.append(usuario)
+
+        # Executar a atualização no banco de dados
+        cursor.execute(sql_atualizar, valores_atualizar)
+        conexao.commit()
+
+        # Limpar os campos de entrada
+        limpar_campos()
+        messagebox.showinfo("Sucesso", "Cliente atualizado com sucesso!")
+    else:
+        messagebox.showerror("Erro", "Cliente não encontrado.")
+
+    # Fechar a conexão e o cursor
+    cursor.close()
+    conexao.close()
+
+
+def limpar_campos():
+    entry_nome.delete(0, tk.END)
+    entry_usuario.delete(0, tk.END)
+    entry_senha.delete(0, tk.END)
+    entry_objetivo.delete(0, tk.END)
+    entry_peso_atual.delete(0, tk.END)
+    entry_peso_desejado.delete(0, tk.END)
+    entry_sexo.delete(0, tk.END)
+    entry_idade.delete(0, tk.END)
+    entry_altura.delete(0, tk.END)
+    entry_tipo_emprego.delete(0, tk.END)
+    entry_exercicio_semanal.delete(0, tk.END)
+    entry_tempo_resultados.delete(0, tk.END)
+    entry_ingestao_calorica.delete(0, tk.END)
+    entry_tempo_para_resultados.delete(0, tk.END)
+
+
+# Criar a janela principal
+janela = tk.Tk()
+janela.title('Cadastro de Clientes')
+
+# Criar os rótulos e campos de entrada
+label_nome = tk.Label(janela, text='Nome:')
+label_nome.pack()
+entry_nome = tk.Entry(janela)
+entry_nome.pack()
+
+label_usuario = tk.Label(janela, text='Usuário:')
+label_usuario.pack()
+entry_usuario = tk.Entry(janela)
+entry_usuario.pack()
+
+label_senha = tk.Label(janela, text='Senha:')
+label_senha.pack()
+entry_senha = tk.Entry(janela, show='*')
+entry_senha.pack()
+
+label_objetivo = tk.Label(janela, text='Objetivo:')
+label_objetivo.pack()
+entry_objetivo = tk.Entry(janela)
+entry_objetivo.pack()
+
+label_peso_atual = tk.Label(janela, text='Peso Atual:')
+label_peso_atual.pack()
+entry_peso_atual = tk.Entry(janela)
+entry_peso_atual.pack()
+
+label_peso_desejado = tk.Label(janela, text='Peso Desejado:')
+label_peso_desejado.pack()
+entry_peso_desejado = tk.Entry(janela)
+entry_peso_desejado.pack()
+
+label_sexo = tk.Label(janela, text='Sexo:')
+label_sexo.pack()
+entry_sexo = tk.Entry(janela)
+entry_sexo.pack()
+
+label_idade = tk.Label(janela, text='Idade:')
+label_idade.pack()
+entry_idade = tk.Entry(janela)
+entry_idade.pack()
+
+label_altura = tk.Label(janela, text='Altura:')
+label_altura.pack()
+entry_altura = tk.Entry(janela)
+entry_altura.pack()
+
+label_tipo_emprego = tk.Label(janela, text='Tipo de Emprego:')
+label_tipo_emprego.pack()
+entry_tipo_emprego = tk.Entry(janela)
+entry_tipo_emprego.pack()
+
+label_exercicio_semanal = tk.Label(janela, text='Exercício Semanal:')
+label_exercicio_semanal.pack()
+entry_exercicio_semanal = tk.Entry(janela)
+entry_exercicio_semanal.pack()
+
+label_tempo_resultados = tk.Label(janela, text='Tempo para Resultados:')
+label_tempo_resultados.pack()
+entry_tempo_resultados = tk.Entry(janela)
+entry_tempo_resultados.pack()
+
+label_ingestao_calorica = tk.Label(janela, text='Ingestão Calórica:')
+label_ingestao_calorica.pack()
+entry_ingestao_calorica = tk.Entry(janela)
+entry_ingestao_calorica.pack()
+
+label_tempo_para_resultados = tk.Label(janela, text='Tempo para Resultados:')
+label_tempo_para_resultados.pack()
+entry_tempo_para_resultados = tk.Entry(janela)
+entry_tempo_para_resultados.pack()
+
+# Criar o botão de adicionar cliente
+botao_adicionar = tk.Button(janela, text='Adicionar Cliente', command=adicionar_cliente)
+botao_adicionar.pack()
+
+# Criar o botão de atualizar cliente
+botao_atualizar = tk.Button(janela, text='Atualizar Cliente', command=atualizar_cliente)
+botao_atualizar.pack()
+
+# Criar o botão de limpar campos
+botao_limpar = tk.Button(janela, text='Limpar Campos', command=limpar_campos)
+botao_limpar.pack()
+
+# Iniciar a janela principal
+janela.mainloop()

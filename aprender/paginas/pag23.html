@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<strong>Bom trabalho! Use a barra de rolagem para chegar ao final desta página.</strong>
+<br><br><br>
+<img src="/img/gato.jpg" alt="gato" >
+<p>Clique <a href="/paginas/pag24.html">Aqui</a> para continuar na próxima página.</p>
+<script>
+
+    let contador = 0;
+    const html = document.querySelector("html");
+    html.addEventListener("click", contarclick);
+    function contarclick() {
+    contador++;
+    localStorage.setItem("contadorpg23", contador);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<p>Selecione o melhor filme abaixo, segundo o autor da página!
+</p>
+<select id="dayselect" onchange="mostrarmensagem()">
+    <option value="don">Clube da Luta</option>
+    <option value="seg">Poderoso Chefao</option>
+    <option value="ter">Interestelar</option>
+    <option value="qua">Como Treinar o seu Dragão</option>
+    <option value="qui">Shrek</option>
+    <option value="sex">Homem de Aço</option>
+  </select>
+  <br><br><br>
+<button class="pag33" style="display: none;" onclick="trocar()">Continue</button>
+
+
+<script>
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg32", contador);
+}
+
+    function mostrarmensagem(){
+        var select = document.getElementById("dayselect");
+
+        if (select.value === "ter") {
+            document.getElementsByClassName("pag33")[0].style.display = 'block';
+        }
+    }
+    function trocar() {
+   window.location.href = '/paginas/pag33.html';
+}
+</script>
+</body>
+</html>

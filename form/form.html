@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        table{
+            height: 40px;
+            margin-left: 100px;
+        }
+
+    th, td {
+  border:1px solid black;
+  margin-left: 40px;
+}
+    td.titulo,td.valores{
+        height: 50px;
+        width: 100px;
+    }
+    .entradas{
+        display: flex;
+    }
+
+    </style>
+
+<script>
+     function myFunction() {
+        // Obtém os valores dos campos de entrada
+        var nome = document.querySelector("#fname").value;
+        var date = document.querySelector("#dn").value;
+        var escolaridade = document.querySelector(".escola").value;
+        var vagaInteresse = document.querySelector("#vaga").value;
+
+        data = new Date(date);
+        dataFormatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+
+        // Seleciona as células <td> com a classe "valores" e atribui os valores
+        var valoresTds = document.querySelectorAll(".valores");
+        valoresTds[0].textContent = nome;
+        valoresTds[1].textContent = dataFormatada;
+        valoresTds[2].textContent = escolaridade;
+        valoresTds[3].textContent = vagaInteresse;
+    }
+</script>
+</head>
+<body>
+<div class="entradas">
+    <form class="formulario">
+        <label for="fname">Nome:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        
+        <label for="dn">Data de Nascimento</label>
+        <input type="date" id="dn" name="dn" pattern="[0-9]{2}-[0-9]{}-[0-9]{2}" required><br><br>
+      
+        <label for="escola">Escolaridade:</label>
+        <select class="escola">
+        <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+        <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+        <option value="Ensino Medio Completo">Ensino Medio Completo</option>
+        <option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>
+        </select><br><br>
+
+        <label for="vaga">Vaga de Interesse:</label>
+        <select id="vaga" name="vaga">
+        <option value="Estagio">Estágio</option>
+        <option value="Jovem Aprendiz">Jovem Aprendiz</option>
+        <option value="Contratado">Contratado</option>
+        </select><br><br>
+
+        <input type="button" value="Enviar" onclick="myFunction()">
+
+
+    </form>
+
+    <table>
+        <tr>
+          <td class="titulo">Nome</td>
+          <td class="titulo">Data de Nascimento</td>
+          <td class="titulo">Escolaridade</td>
+          <td class="titulo">Vaga de Interesse</td>
+        </tr>
+        <tr>
+          <td class="valores"></td>
+          <td class="valores"></td>
+          <td class="valores"></td>
+          <td class="valores"></td>
+        </tr>
+      </table>
+
+
+
+      
+</div>
+
+</body>
+</html>

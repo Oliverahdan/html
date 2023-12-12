@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+    <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+</header>
+<p>As caixas de mensagens são mensagens curtas que o computador coloca na tela para alertá-lo sobre informações importantes ou para fazer perguntas antes de realizar uma tarefa.
+</p>
+<p>Quando uma caixa de mensagem aparecer, você deverá ler a mensagem ou pergunta e responder clicando no botão apropriado na caixa de mensagem.
+</p>
+<p>Clique no link abaixo para exibir uma caixa de mensagem, leia a mensagem e clique no botão apropriado na caixa.
+</p>
+<a href="/paginas/pag23.html" onclick="trocar()">Clique em mim para exibir uma caixa de mensagem</a>
+<script>
+    function trocar() {
+  if (confirm("Vai para a proxima pagina?")) {
+    window.location.href = '/paginas/pag24.html';
+  } 
+  
+}
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg22", contador);
+}
+</script>
+</body>
+</html>

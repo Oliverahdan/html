@@ -1,0 +1,31 @@
+
+    <title>Aplicativos de Acessibilidade</title>
+</head>
+<body>
+
+<section> <!-- topico desenvolvimento 1 -->
+    <h2>Transcrição Instantânea</h2>
+    <h3>Informações</h3>
+    <img src="https://www.handtalk.me/en/wp-content/uploads/sites/3/2021/09/logo_avatar-1.jpg" alt="Transcrição Instantânea Logo" />
+    <p>Instalado de forma nativa em alguns aparelhos Android, o Transcrição Instantânea é um aplicativo com o objetivo de auxiliar pessoas com deficiências auditivas. A ferramenta utiliza o microfone para transcrever falas em tempo real e enviar notificações de sons ao redor.</p>
+    <p>O app também é usado para receber notificações de sons importantes ao seu redor, reconhecendo sons de buzinas, alarmes, animais, pessoas, entre outras opções. O Transcrição Instantânea pode ser acessado nas configurações de acessibilidade do seu aparelho Android e adicionado à gaveta de apps.</p>
+    
+    <p>
+        <strong>Acesse para saber mais em:</strong>
+    </p>
+    <button><a target="_blank" href="https://canaltech.com.br/apps/melhores-aplicativos-acessibilidade/">Site</a></button>
+    <button><a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe">App</a></button>
+</section> <!-- fim do topico desenvolvimento 1 -->
+
+<section> <!-- topico desenvolvimento 2 -->
+    <h2>Wheelmap</h2>
+    <h3>Informações</h3>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKtGkh6HbkVj16FCXAaxZo53m5h1v_2cRC5NNQQLnfT2ecja37zyLMJCMPekG-cSBw7_A&usqp=CAU" alt="Wheelmap Logo" />
+    <p>Wheelmap possibilita encontrar locais acessíveis para pessoas com deficiência ou mobilidade reduzida, sendo seu banco de dados nutrido por uma comunidade de usuários, podendo ser completamente acessível, parcialmente acessível ou de jeito nenhum.</p>
+    <p>Além de ser gratuito no IOS e Android, este aplicativo possui uma versão Web disponível em seu website.</p>
+    <p>
+        <strong>Acesse para saber mais em: </strong>
+    </p>
+    <button><a target="_blank" href="https://wheelmap.org/?locale=pt_BR">Site</a></button>
+    <button><a target="_blank" href="https://play.google.com/store/apps/details?id=org.wheelmap.android.online">App</a></button>
+</section> <!-- fim do topico desenvolvimento 2 -->

@@ -1,0 +1,191 @@
+.tangram {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px
+}
+#gtriangulo-para-cima {
+  width: 0; 
+  height: 0; 
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid  #7b00bd;
+  margin-top: auto;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+#gtriangulo-para-direita {
+  width: 0; 
+  height: 0; 
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid #dcb000;
+  margin-left: 50px;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+#gtriangulo-para-baixo {
+    width: 0; 
+    height: 0; 
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #7b00bd;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+#gtriangulo-para-esquerda {
+  width: 0; 
+  height: 0; 
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent; 
+  border-right:25px solid #ff00c3;
+  margin-left: -25px;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+
+#gtriangulo-para-esquerda2 {
+    width: 0; 
+    height: 0; 
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    border-right: 40px solid #00a6d9;
+    margin-left: -60px;
+    margin-top: 20px;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2; 
+  }
+
+  #gtriangulo-para-direita2 {
+    width: 0; 
+    height: 0; 
+    border-top: 70px solid transparent;
+    border-bottom: 71px solid transparent;
+    border-left: 75px solid #ff0051;
+    margin-left: 30px;
+    margin-top: -30px;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
+
+  #gtriangulo-retangulo {
+    width: 0; 
+    height: 0; 
+    border-top: 103px solid transparent;
+    border-right: 110px solid #ff7926;
+    margin-left: -55px;
+    margin-top: -10px;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 4;
+  }
+  #gtriangulo-borracha1 {
+    width: 0; 
+    height: 0; 
+    border-top: 50px solid transparent;
+    border-right: 50px solid #3ac200;
+    margin-left: 5px;
+    margin-top: 43px;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 4;
+  }
+  #gtriangulo-borracha2 {
+    width: 0; 
+    height: 0; 
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #3ac200;
+    margin-left: 5px;
+    margin-top: 43px;
+    grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 4;
+  }
+
+  #ctriangulo-borracha1 {
+    width: 0; 
+    height: 0; 
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #3ac200;
+    margin-left: 3px;
+    margin-top: 43px;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 7;
+  }
+
+  #ctriangulo-borracha2 {
+    width: 0; 
+    height: 0; 
+    border-bottom: 140px solid transparent;
+    border-left: 130px solid #3ac200;
+    margin-left: 3px;
+    margin-top: 43px;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 7;
+  }
+
+  #ctriangulo-para-cima {
+    width: 0; 
+    height: 0; 
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-bottom: 134px solid  #7b00bd;
+    margin-left: -45px;
+    margin-top: 43px;
+    grid-column-start: 7;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 6;
+  }
+  #ctriangulo-para-cima-lado {
+    width: 0; 
+    height: 0; 
+    border-top: 57px solid transparent;
+    border-bottom: 130px solid transparent; 
+    border-right:53px solid #ff00c3;
+    margin-top: -24px;
+    margin-left: 3px;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    grid-row-start: 10;
+  }
+  #ctriangulo-para-cima1 {
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid  #b7bd00;
+    grid-column-start: 9;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 6;
+  }
+  #ctriangulo-para-baixo {
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 54px solid  #b7bd00;
+    margin-top: 43px;
+    margin-left: -21px;
+    grid-column-start: 9;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 6;
+}

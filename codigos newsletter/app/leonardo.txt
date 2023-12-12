@@ -1,0 +1,27 @@
+    <section> <!-- topico desenvolvimento 1-->
+        <h2>Envision Ai</h2>
+        <h3>Informações</h3>
+        <img src="https://uploads-ssl.webflow.com/5ac150ab7e9bbe927474fbde/642ae038a01d6fdf09004a9d_62c4395977b1fa2df0775ae7_IMG_0951%201-min-p-800.jpg"/>
+        <p>Esse aplicativo tem uma proposta parecida com outros aplicativos, como o Be My Eyes, afinal, sua proposta é identificar objetos, imagens ou textos, em auxilio a pessoas cegas, contudo, o Envision Ai, se utiliza de uma inteligência artificial que faz o reconhecimento e o informa ao usuário.
+
+            Além de possuir outras funções, essa aplicação é muito efetiva para a leitura. Ao baixar o aplicativo você recebe 14 dias de uso grátis.</p>
+        <p> 
+        <strong>Acesse para saber mais em: </strong></p>
+      <button><a   target="_blank" href="https://play.google.com/store/apps/details?id=com.letsenvision.envisionai&hl=pt&gl=US">Aplicativo </a></button>
+      <button><a   target="_blank" href="https://www.letsenvision.com/">Site </a></button>
+    </section> <!-- fim do topico desenvolvimento 1 -->
+
+
+    <section> <!-- topico desenvolvimento 2-->
+        <h2>BioMob</h2>
+        <h3>Informações</h3>
+        <img src="https://biomob.org/wp-content/uploads/2023/05/Imagem-central-1.svg"/>
+        <p>á imaginou se o GPS do seu celular indicasse os melhores locais para frequentar com uma pessoa com deficiência? Nesse quesito, o BioMob poderá te auxiliar muito bem!
+            De forma prática, esse app tende a detectar a sua localização atual e, com base nela, irá sugerir lugares próximos de você para ir com seu acompanhante que tenha alguma deficiência. Dessa forma, restaurantes, academias e, até mesmo, alguns eventos culturais podem ser recomendados através do próprio app, em poucos segundos.    
+            Sem contar que não são somente eventos culturais e empreendimentos que estão no radar da BioMob. Estações de metrô, terminais e paradas de ônibus também estão inclusos na plataforma, tornando a experiência do usuário ainda mais completa.   
+            Não é de se esperar que ele acabou sendo o queridinho para estrangeiros e brasileiros durante as paralimpíadas. Atualmente, ele encontra-se disponível apenas para Android.</p>
+        <p> 
+        <strong>Acesse para saber mais em: </strong></p>
+      <button><a   target="_blank" href="https://play.google.com/store/apps/details?id=com.biomob.org.biomob"> Aplicativo </a></button>
+      <button><a   target="_blank" href="https://biomob.org/">Site</a></button>
+    </section> <!-- fim do topico desenvolvimento 2 -->

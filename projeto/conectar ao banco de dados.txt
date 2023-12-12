@@ -1,0 +1,35 @@
+import mysql.connector
+
+# Conectando ao banco de dados
+db_connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="acesso123",
+    database="massa"
+)
+
+# Função para obter informações do usuário
+def get_user_input(prompt):
+    return input(prompt)
+
+# Obtendo informações do usuário
+nome = get_user_input("Digite o seu nome completo: ")
+idade = int(get_user_input("Digite a sua idade: "))
+peso = get_user_input("Digite o seu peso: ")
+altura = int(get_user_input("Digite a sua altura: "))
+
+# Executando a consulta SQL para inserir os dados na tabela Character_Info
+insert_query = "INSERT INTO cadastro (nome, idade, peso, altura) VALUES (%s, %s, %s, %s)"
+insert_values = (nome, idade, peso, altura)
+
+try:
+    cursor = db_connection.cursor()
+    cursor.execute(insert_query, insert_values)
+    db_connection.commit()
+    print("Dados inseridos com sucesso!")
+except mysql.connector.Error as error:
+    print("Erro ao inserir os dados:", error)
+
+# Fechando a conexão com o banco de dados
+cursor.close()
+db_connection.close()

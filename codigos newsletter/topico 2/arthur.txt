@@ -1,0 +1,8 @@
+<section> <!-- topico desenvolvimento 1-->
+    <h2>ABNT lança norma de acessibilidade em aplicativos de celular</h2>
+    <h3>Informações</h3>
+    <img src="https://imagens.ebc.com.br/gm_-boK2IUHgBEBvjLu6tSgYuQQ=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/uso_de_smartphone_e_celular050720211245.jpg?itok=Q5AaEZSN"/>
+    <p>A ABNT lançou a Norma 17.060 para acessibilidade em celulares, elaborada com mais de 90 especialistas para facilitar o acesso de pessoas com necessidades especiais em ambientes virtuais. Cerca de 17,3 milhões de brasileiros possuem necessidades especiais. A norma abrange aplicativos, sistemas operacionais e páginas da web para dispositivos móveis, contendo 50 requisitos em quatro categorias. Elementos visuais devem ter texto alternativo para garantir o acesso a pessoas com visão, audição, fala, mobilidade, cognição limitada ou epilepsia fotossensível</p>
+<p><strong>Acesse para saber mais em: </strong></p>
+  <button><a target="_blank" href="https://agenciabrasil.ebc.com.br/geral/noticia/2022-10/abnt-lanca-norma-de-acessibilidade-em-aplicativos-de-celular">Ler mais</a></button>
+</section> <!-- fim do topico desenvolvimento 1 -->

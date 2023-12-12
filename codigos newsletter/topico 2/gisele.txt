@@ -1,0 +1,23 @@
+<section> <!-- topico desenvolvimento 2-->
+
+        <h2>Tecnologia e acessibilidade: veja os recursos disponíveis no iOS 17</h2>
+
+        <h3>Informações</h3>
+
+        <img src="/news_letter_dia_da_mulher-main/img/duolingo.png" />
+
+   
+
+        <p>A Apple lançou o iOS 17 em junho com foco em acessibilidade, trazendo cinco principais mudanças para auxiliar os usuários no dia a dia. Essas melhorias buscam oferecer mais autonomia e minimizar limitações nas ferramentas disponíveis. Além dessas cinco melhorias, a atualização também introduziu diversas outras, que os usuários poderão descobrir ao longo do tempo. Com isso, a empresa reforça seu compromisso em tornar seus produtos mais inclusivos e acessíveis para todos.</p>
+
+   
+
+    <p> <strong>Acesse para saber mais em: </strong>
+
+      </p>
+
+      <button><a   target="_blank" href="https://www.tecmundo.com.br/dispositivos-moveis/266002-tecnologia-acessibilidade-veja-recursos-disponiveis-ios-17.htm"> Saiba mais </a></button>
+
+      <button><a   target="_blank" href="https://edipam.braganca.sp.gov.br/canvs/link10811865"> Outras informações </a></button>	
+
+    </section> <!-- fim do topico desenvolvimento 2 -->

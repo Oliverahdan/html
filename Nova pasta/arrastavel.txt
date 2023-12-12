@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+ <header>
+    <h1 class="cabeçalho">Mouse<img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></h1>
+</header>
+<div class="pag28">
+<p class="pag28">"Clicking and dragging" is a way to move certain objects on the screen. To move an object, place the mouse cursor over it, press and hold down the left mouse button, then move the mouse. When you have "dragged" the object to the location you want, let go of the mouse button.
+    Click and drag the red square so that it's inside of the grey square.</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="/img/cristiano_ronaldo.jpg" draggable="true" ondragstart="drag(event)" width="336" height="270">
+<a class="mostrar"href="/paginas/pag29.html"><button>continue</button></a>
+</div>
+</div>
+<script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+      document.getElementsByClassName('mostrar')[0].style.display = 'block';
+    }
+    </script>
+</body>
+</html>

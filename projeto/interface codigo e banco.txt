@@ -1,0 +1,101 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+import mysql.connector
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(400, 300)
+        self.tabWidget = QtWidgets.QTabWidget(Dialog)
+        self.tabWidget.setGeometry(QtCore.QRect(10, 10, 381, 281))
+        self.tabWidget.setObjectName("tabWidget")
+        self.tab_6 = QtWidgets.QWidget()
+        self.tab_6.setObjectName("tab_6")
+        self.label_4 = QtWidgets.QLabel(self.tab_6)
+        self.label_4.setGeometry(QtCore.QRect(160, 20, 61, 16))
+        self.label_4.setObjectName("label_4")
+        self.label_8 = QtWidgets.QLabel(self.tab_6)
+        self.label_8.setGeometry(QtCore.QRect(60, 70, 47, 13))
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(self.tab_6)
+        self.label_9.setGeometry(QtCore.QRect(60, 110, 47, 13))
+        self.label_9.setObjectName("label_9")
+        self.label_14 = QtWidgets.QLabel(self.tab_6)
+        self.label_14.setGeometry(QtCore.QRect(10, 150, 101, 16))
+        self.label_14.setObjectName("label_14")
+        self.pushButton_2 = QtWidgets.QPushButton(self.tab_6)
+        self.pushButton_2.setGeometry(QtCore.QRect(150, 200, 75, 23))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.lineEdit = QtWidgets.QLineEdit(self.tab_6)
+        self.lineEdit.setGeometry(QtCore.QRect(120, 70, 113, 20))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.tab_6)
+        self.lineEdit_2.setGeometry(QtCore.QRect(120, 110, 113, 20))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.tab_6)
+        self.lineEdit_3.setGeometry(QtCore.QRect(120, 150, 113, 20))
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.tabWidget.addTab(self.tab_6, "")
+
+        self.retranslateUi(Dialog)
+        self.tabWidget.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+        self.pushButton_2.clicked.connect(self.cadastrar_usuario)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label_4.setText(_translate("Dialog", "Cadastro"))
+        self.label_8.setText(_translate("Dialog", "Usuário"))
+        self.label_9.setText(_translate("Dialog", "Senha"))
+        self.label_14.setText(_translate("Dialog", "Confimar Senha"))
+        self.pushButton_2.setText(_translate("Dialog", "Cadastrar"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), _translate("Dialog", "Cadastro"))
+
+    def cadastrar_usuario(self):
+        db_host = 'localhost'
+        db_user = 'root'
+        db_password = 'acesso123'
+        db_name = 'bd'
+
+        conn = mysql.connector.connect(
+            host=db_host,
+            user=db_user,
+            password=db_password,
+            database=db_name
+        )
+
+        if conn.is_connected():
+            print("Conexão com o banco de dados estabelecida.")
+
+            cursor = conn.cursor()
+
+            usuario = self.lineEdit.text()
+            senha = self.lineEdit_2.text()
+
+            sql = "INSERT INTO users (username, passwd) VALUES (%s, %s)"
+            values = (usuario, senha)
+            cursor.execute(sql, values)
+
+            # Recupera o ID do usuário inserido
+            usuario_id = cursor.lastrowid
+
+            conn.commit()
+
+            print("Usuário cadastrado com sucesso!")
+
+            cursor.close()
+            conn.close()
+        else:
+            print("Não foi possível conectar ao banco de dados.")
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())

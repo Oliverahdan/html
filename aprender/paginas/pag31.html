@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+    <p>Selecione cada um dos 5 membros do "Boys" de The Boys</p>
+<div class="pag32">
+<form class="form32">
+    <input class="radio1" type="radio" name="fodas" onclick="contar(1)" value="Capitão">
+    <label >Billy Bruto</label><br>
+    <input class="radio2" type="radio" name="fodas" onclick="contar(2)" value="Capitão">
+    <label > Higgie </label><br>
+    <input class="radio3" type="radio" name="fodas" onclick="contar(3)" value="Capitão">
+    <label >Frances</label><br>
+    <input class="radio4" type="radio" name="fodas" onclick="contar(4)" value="Capitão">
+    <label >Leitinho</label><br>
+    <input class="radio5" type="radio" name="fodas" onclick="contar(5)" value="Capitão">
+    <label >Kimiko</label><br>
+  </form>
+
+  <img class="imag" src="/img/bruto.jfif" alt="">
+  <img class="imag" src="/img/higgie.jfif" alt="">
+  <img class="imag" src="/img/frances.jfif" alt="">
+  <img class="imag" src="/img/leitinho.jfif" alt="">
+  <img class="imag" src="/img/kimiko.jfif" alt="">
+  <button class="button32" style="display: none;" onclick="mudar()">continue</button>
+
+</div>
+
+<script>
+
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg31", contador);
+}
+
+var totalBotoes = 5;
+var botoesClicados = 0;
+
+function verificarBotoesClicados() {
+    if (botoesClicados === totalBotoes) {
+        document.getElementsByClassName('button32')[0].style.display = 'block';
+    }
+}
+
+function contar(selecionado) {
+    var imagens = document.querySelectorAll('.imag');
+    var botao = document.querySelector('.button32');
+
+    // Esconder todas as imagens primeiro
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'none';
+    });
+
+    // Exibir a imagem associada ao rádio selecionado
+    imagens[selecionado - 1].style.display = 'block';
+    botao.style.display = 'block';
+}
+
+function mudar() {
+    window.location.href = '/paginas/pag32.html';
+}
+</script>
+</body>
+</html>

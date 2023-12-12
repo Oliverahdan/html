@@ -1,0 +1,58 @@
+esse é o codigo da pagina 1:
+
+esse é meu <a>
+pega o id="botao" e coloca no seu <a> ou se tiver so adiciona onde tiver 'botao' no <script>
+adiciona o onclick="incrementarContador()" no <a>
+
+<a id="botao" href="/paginas/pag2.html" onclick="incrementarContador()">1</a>
+
+"textContent = `1`" é o texto no meu caso entre o <a>: >1<
+
+<script>
+    // Inicializa o contador se ele não existir no localStorage
+    if (!localStorage.getItem("contador")) {
+        localStorage.setItem("contador", "0");
+    }
+
+    // Função para incrementar o contador
+    function incrementarContador() {
+        let contador = parseInt(localStorage.getItem("contador"));
+        contador++;
+        localStorage.setItem("contador", contador.toString());
+        document.getElementById("botao").textContent = `1`;
+    }
+
+    // Atualiza o texto do botão com o valor atual do contador
+    const contador = parseInt(localStorage.getItem("contador"));
+    document.getElementById("botao").textContent = `1`;
+</script>
+
+pagina de resultados:
+
+eu fiz em tabela então coloquei o "id=resultado" no  <td id="resultado"></td>
+então onde vcs quiserem colocar o contador so colocar o id
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Página</th>
+                <th>Número de Cliques</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Página 1</td> 
+                <td id="resultado"></td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário para outras páginas -->
+        </tbody>
+    </table>
+    <script>
+        // Obter o valor do contador do localStorage
+        const contador = localStorage.getItem("contador");
+        
+        // Exibir o número de cliques realizados
+        const resultado = document.getElementById("resultado");
+        resultado.textContent = `${contador}`;
+    </script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+  <header>
+    <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+</header>
+<div class="pag28">
+<p class="pag28">“Clicar e arrastar” é uma forma de mover determinados objetos na tela. Para mover um objeto, coloque o cursor do mouse sobre ele, pressione e segure o botão esquerdo do mouse e mova o mouse. Depois de "arrastar" o objeto para o local desejado, solte o botão do mouse.
+  Clique e arraste o Cristiano Ronaldo para que fique dentro do quadrado cinza.</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="/img/cristiano_ronaldo.jpg" draggable="true" ondragstart="drag(event)" width="336" height="270">
+<a class="mostrar"href="/paginas/pag28.html"><button class="mostrar">continue</button></a>
+</div>
+</div>
+<script>
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg27", contador);
+}
+
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+      document.getElementsByClassName('mostrar')[0].style.display = 'block';
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+var totalBotoes = 11;
+var botoesClicados = 0;
+
+function verificarBotoesClicados() {
+    if (botoesClicados === totalBotoes) {
+        document.getElementsByClassName('continue')[0].style.display = 'block';
+    }
+}
+
+
+function trocar1(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b1');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar2(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b2');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar3(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b3');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar4(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b4');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar5(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b5');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar6(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b6');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar7(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b7');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar8(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b8');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar9(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b9');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar10(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b10');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar11(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.b11');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+

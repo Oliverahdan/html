@@ -1,0 +1,21 @@
+<section> <!-- topico desenvolvimento 1-->
+
+        <h2>Ferramentas de acessibilidade nativas do Windows e do seu celular Android que você precisa conhecer.</h2>
+
+        <h3>Grandes empresas de tecnologia investem em acessibilidade digital para pessoas com deficiência.</h3>
+
+        <img src="https://mwpt.com.br/wp-content/uploads/2021/10/ferramentas-1024x675.jpg" />
+
+   
+
+        <p>Tanto Android quanto Windows possuem recursos nativos como TalkBack, legendas e ampliação de elementos. No Android, também há opções para melhorar interação com dispositivos e habilitar o amplificador de som. No Windows, é possível alterar cores, usar narrador automático e controle ocular. Essas ferramentas são úteis para todos os usuários e promovem a inclusão digital sem a necessidade de aplicativos externos ou custos adicionais.</p>
+
+   
+
+    <p> <strong>Acesse para saber mais em: </strong>
+
+      </p>
+
+      <button><a   target="_blank" href=https://mwpt.com.br/ferramentas-de-acessibilidade-nativas-do-windows-e-do-seu-celular-android-que-voce-precisa-conhecer/"> acessibilidade </a></button>
+
+    </section> <!-- fim do topico desenvolvimento 1 -->

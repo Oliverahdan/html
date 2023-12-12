@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mouse <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao início</span></h1>
+    </header>
+    <p class="pag9">Clique em cada um dos times abaixo para avançar para a próxima página.</p>
+
+    <div class="imagens">
+        <img class="c1" src="/img/cruzeiro.png" onclick="exibir(this)">
+        <img class="c2" src="/img/flamengo.png" onclick="exibir(this)">
+        <img class="c3" src="/img/palmeiras.png" onclick="exibir(this)">
+        <img class="c4" src="/img/galo.png" onclick="exibir(this)">
+        <img class="c5" src="/img/santos.png" onclick="exibir(this)">
+        <img class="c6" src="/img/corinthians.png" onclick="exibir(this)">
+
+        <img class="d1" src="/img/verificado.png" alt="verify">
+        <img class="d2" src="/img/verificado.png" alt="verify">
+        <img class="d3" src="/img/verificado.png" alt="verify">
+        <img class="d4" src="/img/x.png" alt="verify">
+        <img class="d5" src="/img/verificado.png" alt="verify">
+        <img class="d6" src="/img/verificado.png" alt="verify">
+        <br><br><br>
+    <a class="continue2" href="/paginas/pag21.html"><button id="continue2">Continue</button></a>
+    </div>
+
+    
+    <script>
+
+
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg20", contador);
+}
+
+        var totalbt = 6;
+        var btck = 0;
+
+        function verify() {
+            if (btck === totalbt) {
+                document.getElementById("continue2").style.display = "block";
+            }
+        }
+
+        function exibir(element) {
+            var imgNumber = element.className.substr(1); // Pega o número do elemento clicado (c1, c2, etc.)
+            var displayElement = document.querySelector(".d" + imgNumber);
+
+            if (displayElement.style.display !== "block") {
+                btck++;
+                displayElement.style.display = "block";
+                verify();
+            }
+        }
+    </script>
+</body>
+</html>

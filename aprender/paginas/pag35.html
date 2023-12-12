@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Resultados <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao início</span></h1>
+    </header>
+    <table class="resu">
+        <thead >
+            <tr class="resu">
+                <th class="resu">Número de Exercício</th>
+                <th class="resu">Números de Cliques Esperados</th>
+                <th class="resu">Números de Clicks Realizados</th>
+                <th class="resu">Resultados</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                // Crie um array de números de cliques esperados para cada página
+                const esperados = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 7, 13, 2, 1, 1, 1, 1, 1, 2, 7, 25, 7, 6, 3, 3, 1];
+            
+                for (let pagina = 1; pagina <= 35; pagina++) {
+                    const contador = localStorage.getItem(`contadorpg${pagina}`) || "0";
+                    const valorEsperado = esperados[pagina - 1]; // Obtém o valor esperado da posição correta do array
+                    const diferenca = contador <= valorEsperado ? `<img src="/img/verificado.png" alt="Verificado" style="width: 30px; height: 30px;">` : `<img src="/img/x.png" alt="X" style="width: 30px; height: 30px;">`;
+            
+                    document.write(`
+                        <tr>
+                            <td class="resu">${pagina}</td>
+                            <td class="resu">${valorEsperado}</td>
+                            <td class="resu" id="resultado${pagina}">${contador}</td>
+                            <td class="resu">${diferenca}</td>
+                        </tr>
+                    `);
+                }
+            </script>
+            
+ </table>
+</tbody>
+</body>
+</html>

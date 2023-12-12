@@ -1,0 +1,56 @@
+
+    <section><!-- topico desenvolvimento -->
+      <h2>Be My Eyes</h2>
+      <h3>Tecnologia</h3>
+      <img src="/img/d-games.png" alt="#" />
+      <p>
+        Esse aplicativo permite que usuários cegos identifiquem objetos ou textos através de videochamadas com uma espécie de rede solidária. Essa tecnologia aliada a generosidade, gera um resultado incrível.
+        A pessoa cadastrada na plataforma pode solicitar ajuda quantas vezes forem necessárias, geralmente haverá alguém disposto a auxiliá-la — seja para descrever uma imagem, para ler rótulos de produtos ou para procurar algum item perdido em casa.
+      </p>
+      <h4>Mais informações:</h4>
+      <p><strong>Acesse para saber mais em:</strong></p>
+      <button><a target="_blank" href="https://www.bemyeyes.com/language/portuguese-brazil">Site</a></button>
+      <button><a target="_blank" href="https://play.google.com/store/apps/details?id=com.bemyeyes.bemyeyes">Aplicativo</a></button>
+    </section><!-- fim do topico desenvolvimento -->
+
+    <section><!-- topico desenvolvimento -->
+      <h2>Big Launcher</h2>
+      <h3>Tecnologia</h3>
+      <img src="/img/d-games.png" alt="#" />
+      <p>
+        Por fim, temos a indicação do aplicativo Big Launcher. Ele foi criado para atender as necessidades de pessoas mais idosas ou aquelas que possuem visão muito periférica. A ideia é que eles possam utilizar o celular de forma ainda mais intuitiva e prática.
+        De forma prática, a interface da tela do celular é alterada para símbolos maiores, tornando o aparelho mais adaptável. Atualmente, o Big Launcher encontra-se disponível somente para sistemas Android.
+      </p>
+      <h4>Mais informações:</h4>
+      <p><strong>Acesse para saber mais em:</strong></p>
+      <button><a target="_blank" href="https://biglauncher.com/pt/">Site</a></button>
+      <button><a target="_blank" href="https://play.google.com/store/apps/details?id=name.kunes.android.launcher.demo&hl=pt_BR&gl=US">Aplicativo</a></button>
+    </section><!-- fim do topico desenvolvimento -->
+
+    <section><!-- topico desenvolvimento -->
+      <h2>Guia de Rodas</h2>
+      <h3>Tecnologia</h3>
+      <img src="/img/d-games.png" alt="#" />
+      <p>
+        Criado por Bruno Mahfuz, que é cadeirante, o Guia de Rodas é um aplicativo que permite que diferentes usuários possam avaliar os locais de uma determinada cidade.
+        O aplicativo conta com uma equipe formada por arquitetos que falam sobre questões de mobilidade. Dessa forma, é possível mensurar toda a acessibilidade e gerar uma qualificação.
+        Disponível para: Android, iOS e Windows Phone.
+      </p>
+      <h4>Mais informações:</h4>
+      <button><a target="_blank" href="https://guiaderodas.com/?gclid=Cj0KCQjwoK2mBhDzARIsADGbjeqfQCro_wNvOWTILATPg_xo70uU-Bou9Ijpuv1KxqktiGgYbY4ZQvkaApkXEALw_wcB">Site</a></button>
+      <button><a target="_blank" href="https://play.google.com/store/apps/details?id=com.parallel30.guiaderodas">Aplicativo</a></button>
+    </section><!-- fim do topico desenvolvimento -->
+
+    <section><!-- topico desenvolvimento -->
+      <h2>HandTalk</h2>
+      <h3>Tecnologia</h3>
+      <img src="/img/d-games.png" alt="#" />
+      <p>
+        O aplicativo HandTalk é um tradutor automático para Libras muito inovador e útil. Nele você consegue traduzir textos ou áudios para a libras com a ajuda de Hugo, um assistente virtual em 3D.
+        Dentre suas funcionalidades, é possível realizar videochamadas em todo o território nacional, com intérpretes que vão fazer a tradução no mesmo instante. Vale destacar que o recurso está disponível no sistema operacional iOS e Android.
+      </p>
+      <h4>Mais informações:</h4>
+      <button><a target="_blank" href="https://www.handtalk.me/br/">Site</a></button>
+      <button><a target="_blank" href="https://play.google.com/store/apps/details?id=br.com.handtalk">Aplicativo</a></button>
+    </section><!-- fim do topico desenvolvimento -->
+  </div>

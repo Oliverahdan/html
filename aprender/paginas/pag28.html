@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<p>As caixas de seleção permitem selecionar uma ou mais opções de um grupo de opções. Clique dentro de cada uma das caixas de seleção brancas abaixo para continuar.</p>
+<input class="checkbox" type="checkbox" onclick="exibir(this)" >
+  <label>Um</label><br>
+<input class="checkbox" type="checkbox" onclick="exibir(this)" >
+  <label>Dois</label><br>
+<input class="checkbox" type="checkbox" onclick="exibir(this)" >
+  <label>Três</label><br>
+<input class="checkbox" type="checkbox" onclick="exibir(this)" >
+  <label>Quatro</label><br>
+<input class="checkbox" type="checkbox" onclick="exibir(this)" >
+  <label>Cinco</label><br>
+<input class="checkbox" type="checkbox" onclick="exibir(this)" >
+  <label>Seis</label><br>
+</div>
+<br><br>
+<a href="/paginas/pag29.html"><button class="pag29">continue</button></a>
+<script>
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg28", contador);
+}
+
+    var totalbt = 6;
+    var btck = 0;
+    
+    function verify() {
+        if (btck === totalbt) {
+            var continueButton = document.querySelector(".pag29");
+            continueButton.style.display = "block";
+        }
+    }
+    
+    function exibir(checkbox) {
+        var isChecked = checkbox.checked;
+    
+        if (isChecked) {
+            btck++;
+        } else {
+            btck--;
+        }
+    
+        verify();
+    }
+    </script>
+    
+    
+</body>
+</html>

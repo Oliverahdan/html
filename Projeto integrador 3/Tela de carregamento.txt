@@ -1,0 +1,49 @@
+import 'dart:async';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(LoadingScreen());
+}
+
+class LoadingScreen extends StatefulWidget {
+  @override
+  _LoadingScreenState createState() => _LoadingScreenState();
+}
+
+class _LoadingScreenState extends State<LoadingScreen> {
+  bool _showImage = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _startBlinking();
+  }
+
+  void _startBlinking() {
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        _showImage = !_showImage;
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Color(0xFFFCD167),
+        body: Center(
+          child: AnimatedOpacity(
+            opacity: _showImage ? 1.0 : 0.0,
+            duration: Duration(milliseconds: 500),
+            child: Image.asset(
+              'assets/2.png', // Altere para o caminho da imagem no seu projeto
+              width: 400, // Altere o tamanho da imagem conforme necessário
+              height: 400,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,20 @@
+<section> <!-- marcella -->
+
+        <h2>6 funções de acessibilidade do iPhone que podem facilitar a sua vida.</h2>
+
+        <h3>Informações</h3>
+
+        <img src="IMAGEM" />
+
+   
+
+        <p>O iPhone (iOS) possui recursos de acessibilidade para auxiliar pessoas com limitações físicas ou sensoriais, como o VoiceOver que lê em voz alta o conteúdo da tela, o AssistiveTouch com um botão virtual acessível e a Lupa para ampliar a tela. Há também suporte para legendas ocultas, inversão de cores, escala de cinza e redução de movimento. Para ativá-los, vá em Configurações > Acessibilidade. Essas funções não só beneficiam usuários com deficiências, mas também podem ser úteis para todos.
+   
+
+    <p> <strong>Acesse para saber mais em: </strong>
+
+      </p>
+
+      <button><a   target="_blank" href="https://www.techtudo.com.br/listas/2023/07/6-funcoes-de-acessibilidade-do-iphone-que-podem-facilitar-a-sua-vida-edapps.ghtml"> Saiba mais </a></button>
+
+    </section> <!-- marcella -->

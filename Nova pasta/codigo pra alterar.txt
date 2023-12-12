@@ -1,0 +1,13 @@
+<section><!-- topico desenvolvimento -->
+        <h2>Be My Eyes</h2>
+        <h3>Tecnologia</h3>
+        <img src="" alt="#" />
+        <p>
+          Esse aplicativo permite que usuários cegos identifiquem objetos ou textos através de videochamadas com uma espécie de rede solidária. Essa tecnologia aliada a generosidade, gera um resultado incrível.
+          A pessoa cadastrada na plataforma pode solicitar ajuda quantas vezes forem necessárias, geralmente haverá alguém disposto a auxiliá-la — seja para descrever uma imagem, para ler rótulos de produtos ou para procurar algum item perdido em casa.
+        </p>
+        <h4>Mais informações:</h4>
+        <p><strong>Acesse para saber mais em:</strong></p>
+        <button><a target="_blank" href="https://play.google.com/store/apps/details?id=com.bemyeyes.bemyeyes">Aplicativo</a></button>
+        <button><a target="_blank" href="https://www.bemyeyes.com/language/portuguese-brazil">Site</a></button>
+</section><!-- fim do topico desenvolvimento -->

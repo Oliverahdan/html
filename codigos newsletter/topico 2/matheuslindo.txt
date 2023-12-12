@@ -1,0 +1,48 @@
+<p>O pacote de acessibilidade do Android reúne diversos recursos de adaptação, funções que auxiliam usuários com deficiência visual, auditiva ou motora a usarem o smartphone com apenas algumas configurações. Confira aqui algumas delas:</p>
+
+<h4>Menu de acessibilidade</h4>
+<p>Para ativar o menu de acessibilidade do seu smartphone, basta seguir estes passos:</p>
+<ul>
+    <li>Clique em "Configurações";</li>
+    <li>Selecione "Acessibilidade";</li>
+    <li>Pressione "Serviços Instalados";</li>
+    <li>Clique em "Menu de acessibilidade".</li>
+</ul>
+
+<h4>Correção de cores</h4>
+<p>O Android disponibiliza um sistema de correção de cores de acordo com os tipos de daltonismo. Você pode configurá-lo da seguinte forma:</p>
+<ul>
+    <li>Clique em "Configurações";</li>
+    <li>Depois, clique em "Acessibilidade";</li>
+    <li>Selecione "Melhorias de visibilidade";</li>
+    <li>E, por fim, clique em "Correção de cor".</li>
+</ul>
+
+<h4>Teclado em braille e Talkback</h4>
+<p>O recurso de Talkback realiza a leitura de informações presentes na tela. Além disso, a sua ativação possibilita o funcionamento do teclado digital em braille. Para utilizá-lo, siga o passo a passo:</p>
+<ul>
+    <li>Acesse "Configurações";</li>
+    <li>Clique em "Acessibilidade";</li>
+    <li>Selecione "Serviços instalados";</li>
+    <li>E, por último, clique em "Talkback".</li>
+</ul>
+
+<h4>Selecionar para ouvir</h4>
+<p>Você também pode selecionar um texto com a marcação do sistema ou um conteúdo específico e ouvir o que está escrito. Basta incluir o ícone do reprodutor de textos na tela, dessa forma:</p>
+<ul>
+    <li>Vá em "Configurações";</li>
+    <li>Clique em "Acessibilidade";</li>
+    <li>Depois, selecione "Serviços instalados";</li>
+    <li>E, por fim, clique em "Selecionar para ouvir".</li>
+</ul>
+
+<h4>Fontes e temas de alto contraste</h4>
+<p>O sistema Android possibilita a configuração do contraste das fontes e teclado do aparelho. Esse recurso gera melhor visualização. A Samsung oferece um tema de alto contraste de forma gratuita na loja virtual. E para alterar a fonte:</p>
+<ul>
+    <li>Clique em "Configurações";</li>
+    <li>Selecione "Acessibilidade";</li>
+    <li>Em seguida, clique em "Melhorias de visibilidade";</li>
+    <li>E, por fim, clique em "Fontes de alto contraste".</li>
+</ul>
+
+<p><a href="https://tudocelulares.net/funcoes-de-acessibilidade-nos-celulares/">Saiba mais</a></p>

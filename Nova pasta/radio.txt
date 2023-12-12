@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+</head>
+<body>
+ <header>
+    <h1 class="cabeçalho">Mouse<img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></h1>
+</header>
+<form>
+    
+    <input type="radio" name="falsos" onclick="contar1()" value="Capitão">
+    <label >Capitão Patria</label><br>
+    <input type="radio" name="falsos" onclick="contar2()" value="Maeve">
+    <label >Maeve</label><br>
+    <input type="radio" name="falsos" onclick="contar3()" value="Noir">
+    <label >Noir</label><br>
+    <input type="radio" name="falsos" onclick="contar4()" value="Profundo">
+    <label >Profundo</label><br>
+    <input type="radio" name="falsos" onclick="contar5()" value="Luz">
+    <label >Luz Estrela</label><br>
+    <input type="radio" name="falsos" onclick="contar6()" value="Atrain">
+    <label>Atrain</label>
+  </form>
+<button class="pag31" style="display: none;" onclick="mudar()">continue</button>
+<script>
+function mudar(){
+    window.location.href = '/paginas/pag32.html'
+}    
+
+var totalBotoes = 6;
+var botoesClicados = 0;
+
+function verificarBotoesClicados() {
+    if (botoesClicados === totalBotoes) {
+        document.getElementsByClassName('pag31')[0].style.display = 'block';
+    }
+}
+
+
+function contar1() {
+
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function contar2() {
+
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function contar3() {
+
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function contar4() {
+
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function contar5() {
+
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function contar6() {
+
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+</script>
+</body>
+</html>

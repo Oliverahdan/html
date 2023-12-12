@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/mouse.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="cabeçalho">Mause <a href="/mouse.html"><img class="cabeça" src="/img/silhueta-de-rato.png" alt="rato" width="30px" height="30px"></a><span>clique no ratinho para voltar ao inicio</span></h1>
+    </header>
+<p class="pag9">Clique em cada um dos botões abaixo para avançar para a próxima página.
+</p>
+<table style="margin-left: 230px;">
+<tr>
+    <td><button class="b1" onclick="exibir(this)" style="background-color: rgb(133, 198, 255);"></button></td>
+    <td><button class="b2" onclick="exibir(this)" style="background-color: rgb(22, 110, 32);"></button></td>
+    <td><button class="b3" onclick="exibir(this)" style="background-color: rgb(215, 20, 20);"></button></td>
+    <td><button class="b4" onclick="exibir(this)" style="background-color: rgb(255, 0, 208);"></button></td>
+    <td><button class="b5" onclick="exibir(this)" style="background-color: rgb(255, 145, 0);"></button></td>
+    <td><button class="b6" onclick="exibir(this)" style="background-color: rgb(255, 204, 153);"></button></td>
+    <td><button class="b7" onclick="exibir(this)" style="background-color: rgb(255, 249, 138);"></button></td>
+    <td><button class="b8" onclick="exibir(this)" style="background-color: rgb(255, 159, 242);"></button></td>
+    <td><button class="b9" onclick="exibir(this)" style="background-color: rgb(0, 13, 155);"></button></td>
+    <td><button class="b10" onclick="exibir(this)" style="background-color: rgb(123, 117, 0);"></button></td>
+    <td><button class="b11" onclick="exibir(this)" style="background-color: rgb(255, 15, 115);"></button></td>
+</tr>
+<tr>
+    <td><img class="b1 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b2 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b3 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b4 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b5 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b6 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b7 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b8 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b9 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b10 hidden" src="/img/verificado.png" alt="verify"></td>
+    <td><img class="b11 hidden" src="/img/verificado.png" alt="verify"></td>
+</tr>
+</table>
+<br><br><br>
+<a href="/paginas/pag20.html" id="continue"><button id="continue1" >Continue</button></a>
+<script>
+
+let contador = 0;
+const html = document.querySelector("html");
+html.addEventListener("click", contarclick);
+function contarclick() {
+contador++;
+localStorage.setItem("contadorpg19", contador);
+}
+
+var totalbt = 11;
+var btck = 0;
+
+        function verify() {
+            if (btck === totalbt) {
+                document.getElementById("continue").style.display = "block";
+            }
+        }
+
+        function exibir(element) {
+            var imgNumber = element.className.substr(1); // Pega o número do elemento clicado (c1, c2, etc.)
+            var displayElement = document.querySelector("img.b" + imgNumber);
+
+            if (displayElement.style.display !== "block") {
+                btck++;
+                displayElement.style.display = "block";
+                verify();
+            }
+        }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+from tkinter import *
+import mysql.connector
+
+root = Tk()
+root.title("IMC (Índice de Massa Corporal)")
+
+# Conectando ao banco de dados
+db_connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="acesso123",
+    database="massa"
+)
+
+# Função para criar o rótulo e entrada lado a lado
+def criar_entrada(linha, texto, width):
+    label = Label(root, text=texto)
+    label.grid(row=linha, column=0, padx=5, pady=5)
+
+    entrada = Entry(root, font=("Arial", 12), width=width)
+    entrada.grid(row=linha, column=1, padx=5, pady=5, sticky='w')
+
+    return entrada
+
+# Função para obter informações do usuário
+def get_user_input(prompt):
+    return input(prompt)
+
+# Função para calcular o IMC
+def calcular_imc():
+    peso = float(entrada_peso.get())
+    altura = float(entrada_altura.get())
+
+    altura_ao_quadrado = altura * altura
+    imc = peso / altura_ao_quadrado
+
+    resultado_imc.config(text=f"IMC: {imc:.2f}")
+
+# Função para inserir os dados no banco de dados
+def inserir_dados():
+    nome = entrada_nome.get()
+    idade = int(entrada_idade.get())
+    peso = float(entrada_peso.get())
+    altura = float(entrada_altura.get())
+
+    # Executando a consulta SQL para inserir os dados na tabela cadastro
+    insert_query = "INSERT INTO cadastro (nome, idade, peso, altura) VALUES (%s, %s, %s, %s)"
+    insert_values = (nome, idade, peso, altura)
+
+    try:
+        cursor = db_connection.cursor()
+        cursor.execute(insert_query, insert_values)
+        db_connection.commit()
+        print("Dados inseridos com sucesso!")
+    except mysql.connector.Error as error:
+        print("Erro ao inserir os dados:", error)
+
+    # Fechando a conexão com o banco de dados
+    cursor.close()
+    db_connection.close()
+
+# Criar as entradas
+entrada_nome = criar_entrada(0, "Nome:", 20)
+entrada_idade = criar_entrada(1, "Idade:", 4)
+entrada_peso = criar_entrada(2, "Peso:", 4)
+entrada_altura = criar_entrada(3, "Altura:", 4)
+
+# Botão para calcular o IMC
+btn_calcular_imc = Button(root, text="Calcular IMC", command=calcular_imc)
+btn_calcular_imc.grid(row=4, column=0, padx=5, pady=10)
+
+# Rótulo para exibir o resultado do IMC
+resultado_imc = Label(root, text="IMC: ")
+resultado_imc.grid(row=4, column=1, padx=5, pady=10)
+
+# Botão para inserir os dados
+btn_inserir = Button(root, text="Inserir Dados", command=inserir_dados)
+btn_inserir.grid(row=5, column=0, columnspan=2, padx=5, pady=10)
+
+root.mainloop()

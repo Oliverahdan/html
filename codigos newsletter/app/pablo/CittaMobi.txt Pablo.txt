@@ -1,0 +1,19 @@
+<section> <!-- topico desenvolvimento 1-->
+
+    <h2>CittaMobi</h2>
+    <p>É analisando este cenário que o CittaMobi fornece informações para os que precisam utilizar ônibus, apontando as paradas, as principais linhas e até mesmo os terminais adaptados para esta condição.</p>
+    <p>Além disso, o aplicativo consegue até mesmo identificar se o automóvel que está se aproximando é apropriado para quem utiliza cadeiras de rodas – o que é um verdadeiro facilitador para evitar que o indivíduo faça sinal e acabe não embarcando.</p>
+    <img src=": https://tix.life/produtos/telepatix/" />
+    <h4>Disponível para: Versão Web e Mobile, para Android e iOS.</h4>
+    <p>
+      Saiba mais sobre no
+      <a
+        href="https://www.cittamobi.com.br/home/"
+        >site.</a
+      >
+    </p>
+
+<p> <strong>Acesse para saber mais em: </strong>
+  </p>
+  <button><a   target="_blank" href="https://play.google.com/store/apps/details?id=br.com.cittabus"> App </a></button>
+</section> <!-- fim do topico desenvolvimento 1 -->
